@@ -3,7 +3,7 @@ echo "Compiling unit tests..."
 #clang -c set.c
 #clang++ -lgtest -std=c++11 -pthread -g -Wall -Wextra -o unit_test.o -c test.cpp
 #clang++ -std=c++11 -g -Wall -Wextra -o unit_test set.o unit_test.o -lgtest -pthread
-g++ hellowa.c mytest.c -lgtest_main -lpthread -o mytest
+g++ -o mytest -lgtest_main -lpthread hellowa.c mytest.c
 echo "Running unit tests..."
 ./mytest
 result=$?
