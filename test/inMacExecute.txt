@@ -1,0 +1,2 @@
+Ex:(gTest unzip in ~/DOcuments/gtest)
+g++ -I$GTEST_PATH/include 7_z_test.c ~/Documents/gtest/libgtest.a ~/Documents/gtest/libgtest_main.a -o test
