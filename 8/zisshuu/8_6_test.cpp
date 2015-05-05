@@ -17,27 +17,27 @@ void print_array(int array[], int size){
 
 //convert_to_ward test
 TEST(convert_to_word_test, case1){
-  EXPECT_STREQ("three", convert_to_word('3'));
+  EXPECT_STREQ("three", convert_to_word(3));
 }
 
 TEST(convert_to_word_test, case2){
-  EXPECT_STREQ("seven", convert_to_word('7'));
+  EXPECT_STREQ("seven", convert_to_word(7));
 }
 
 TEST(convert_to_word_test, not_number_case){
-  EXPECT_STREQ("not a number!", convert_to_word('d'));
+  EXPECT_STREQ("invalid number", convert_to_word(12));
 }
 
 //convert_to_string_test
 TEST(convert_to_string_test, one_digit_case){
-  char array[] = {'1'};
+  int array[] = {1};
   char result[30];
   convert_to_string(array, 1, result);
   EXPECT_STREQ("one", result);
 }
 
 TEST(convert_to_string_test, many_digit_case){
-  char array[] = {'1','2','3'};
+  int array[] = {1, 2, 3};
   char result[30];
   convert_to_string(array, 3, result);
   EXPECT_STREQ("one two three", result);

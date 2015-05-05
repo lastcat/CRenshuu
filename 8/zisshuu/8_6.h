@@ -4,44 +4,46 @@
 #include <math.h>
 
 //数字を文字列に変換
-char* convert_to_word(char number){
+char* convert_to_word(int number){
   switch(number){
-    case '1':
+    case 1:
       return "one";
       break;
-    case '2':
+    case 2:
       return "two";
       break;
-    case '3':
+    case 3:
       return "three";
       break;
-    case '4':
+    case 4:
       return "four";
       break;
-    case '5':
+    case 5:
       return "five";
       break;
-    case '6':
+    case 6:
       return "six";
       break;
-    case '7':
+    case 7:
       return "seven";
       break;
-    case '8':
+    case 8:
       return "eight";
       break;
-    case '9':
+    case 9:
       return "nine";
       break;
-    case '0'
+    case 0:
       return "zero";
+      break;
     default:
-      return "not a number!";
+      return "invalid number";
+      break;
   }
 }
 
 //数字の文字配列を一つずつwordにして結合してresultにして返す
-void convert_to_string(char numbers[], int size, char result[]){
+void convert_to_string(int numbers[], int size, char result[]){
   char string[100] = "";
   int i;
   strcat(string, convert_to_word(numbers[0]));
@@ -96,10 +98,8 @@ void convert_int_to_text(int num, char* result){
   char tmp[100];
   //数字を桁ごとに分解して配列に入れる(桁は逆順)
   split_to_int_array(num, array);
-  //数字配列を数字の文字配列に変換する
-  int_array_to_char_array(array, tmp, digit);
-  //数字の文字列配列を単語の組み合わせにする
-  convert_to_string(tmp, digit, result);
+  //数字配列を単語の組み合わせにする
+  convert_to_string(array, digit, result);
   //解放
   free(array);
 }
