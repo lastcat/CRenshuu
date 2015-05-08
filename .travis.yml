@@ -11,4 +11,5 @@ before_install:
     - bundle install
 before_script:
     - pwd
-script: "sh rake"
+script:
+    - rake
