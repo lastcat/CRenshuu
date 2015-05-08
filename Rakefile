@@ -1,7 +1,3 @@
-#各ディレクトリに入る
-#/zisshuuに入る
-#g++ *.cpp /usr/local/lib/libgtest.a -pthread
-#実行
 def target_cpp_files(directory)
   Dir.glob("#{directory}/"+"zisshuu/" + "*.cpp")
 end
@@ -30,14 +26,22 @@ task :test_in_mac do
     test.each do |t|
       if(!test.empty?)
         #sh "g++ #{test} /usr/local/lib/libgtest.a -pthread -o #{test.split.first}"
-        sh "g++ -I$GTEST_PATH/include #{t} ~/Documents/gtest/libgtest.a ~/Documents/gtest/libgtest_main.a -o #{t.split('.').first}"
+        sh "g++ -fprofile-arcs -ftest-coverage -I$GTEST_PATH/include #{t} ~/Documents/gtest/libgtest.a ~/Documents/gtest/libgtest_main.a -o #{t.split('.').first}.out"
       end
     end
   end
 
   test_files.each do |test|
     test.each do |t|
-      sh "./#{t.split('.').first}"
+      sh "./#{t.split('.').first}.out"
+      sh "gcov *.gcda"
+      #gcov
+      #object_directory = t.split('.').first.split('/')
+      #object_directory.pop
+      #object_directory = object_directory.join('/')
+      #h_file_name.pop
+      #sh "gcov -I ./#{h_file_name.join('_')}.h"
+      #sh "gcov -l ./#{t.split('.').first.split('/').last}.cpp -o #{object_directory}"
     end
   end
 end

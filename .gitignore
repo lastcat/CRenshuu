@@ -34,3 +34,8 @@
 #gem files
 /.bundle
 /vendor/bundle
+
+#coverage file
+*.gcov
+*.gcda
+*.gcno
