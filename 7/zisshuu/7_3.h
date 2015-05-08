@@ -10,7 +10,7 @@ int calcDays(int bytes){
 }
 
 int calcHours(int bytes){
-	bytes %= (60 * 60　* 24 * 960);
+	bytes %= (60 * 60 * 24 * 960);
 	if(bytes > 60 * 60 * 960)
 	  return bytes / (60 * 60 * 960);
 	else
