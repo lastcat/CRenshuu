@@ -1,0 +1,18 @@
+machine:
+  ruby:
+    version: 2.2.1p85
+  g++:
+    version: 4.6.3
+
+dependencies:
+  override:
+    - sudo apt-get update
+    - sudo apt-get install libgtest-dev
+    - "cd /usr/src/gtest && sudo cmake . && sudo cmake --build . && sudo mv libg* /usr/local/lib/ ; cd -"
+    - export GTEST_LIBRARY=/usr/local/lib/libgtest.a
+    - export GTEST_MAIN_LIBRARY=/usr/local/lib/libgtest_main.a
+    - export GTEST_INCLUDE_DIRS=/usr/include
+    - bundle install
+test:
+  override:
+    - rake
