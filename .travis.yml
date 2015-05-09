@@ -9,7 +9,10 @@ before_install:
     - export GTEST_MAIN_LIBRARY=/usr/local/lib/libgtest_main.a
     - export GTEST_INCLUDE_DIRS=/usr/include
     - bundle install
+    - sudo easy_install cpp-coveralls
 before_script:
     - pwd
 script:
     - rake
+after_script:
+    - coveralls
