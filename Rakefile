@@ -7,7 +7,7 @@ task :default do
   test_files.each do |test|
     test.each do |t|
       if(!test.empty?)
-        sh "g++ #{t} /usr/local/lib/libgtest.a -pthread -o #{t.split('.').first}"
+        sh "g++ -fprofile-arcs -ftest-coverage #{t} /usr/local/lib/libgtest.a -pthread -o #{t.split('.').first}"
         #sh "g++ -I$GTEST_PATH/include #{t} ~/Documents/gtest/libgtest.a ~/Documents/gtest/libgtest_main.a -o #{t.split('.').first}"
       end
     end
@@ -18,6 +18,7 @@ task :default do
       sh "./#{t.split('.').first}"
     end
   end
+  sh "gcov *.gcda"
 end
 
 task :test_in_mac do
