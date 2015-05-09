@@ -9,7 +9,7 @@ dependencies:
     - sudo apt-get install libgtest-dev
     - "cd /usr/src/gtest && sudo cmake . && sudo cmake --build . && sudo mv libg* /usr/local/lib/ ; cd -"
     - bundle install
-    - pip install cpp-coveralls
+    - sudo pip install cpp-coveralls
 test:
   override:
     - rake
