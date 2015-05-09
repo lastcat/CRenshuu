@@ -27,7 +27,7 @@ int main(int argc, char *argv[]){
   }
   in_file = open(argv[1], O_RDONLY|O_BINARY);
   if(in_file < 0){
-    //渓谷にモデルが、引数の型がおかしい.fprintfの最初の引数はファイル
+    //引数の型がおかしい.fprintfの最初の引数はファイル
     fprintf(stderr, "Error:Unable to open %s\n", argv[1]);
     exit(8);
   }
@@ -40,6 +40,9 @@ int main(int argc, char *argv[]){
 
   while(1){
     read_size = read(in_file, buffer, sizeof(buffer));
+
+    if(read_size == 0)
+      break;
 
     if(read_size < 0){
       fprintf(stderr, "Error:Read error\n");
