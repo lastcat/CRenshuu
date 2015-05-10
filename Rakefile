@@ -3,7 +3,7 @@ def target_cpp_files(directory)
 end
 
 task :default do
-  test_files = (2..14).map{|i| target_cpp_files(i.to_s) }
+  test_files = (2..15).map{|i| target_cpp_files(i.to_s) }
   test_files.each do |test|
     test.each do |t|
       if(!test.empty?)
