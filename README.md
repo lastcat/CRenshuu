@@ -9,3 +9,5 @@
 
 
 ![Build Status](https://circleci.com/gh/lastcat/CRenshuu.svg?style=shield&circle-token=bbba4cfd34bdf1982c6a79edbd925dded008e102)
+
+[![Coverage Status](https://coveralls.io/repos/lastcat/CRenshuu/badge.svg?branch=master)](https://coveralls.io/r/lastcat/CRenshuu?branch=master)
