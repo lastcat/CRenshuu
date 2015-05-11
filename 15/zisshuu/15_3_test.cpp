@@ -18,17 +18,19 @@ TEST(fast_sum_of_array_test, case1){
 TEST(speed_test, case1){
   int array[] = {1,2,3,4,5,6,7,8,9,10};
   clock_t n_start = clock();
-  sum_of_array(array, 10);
+  for(int i = ; i < 100000; i++)
+    sum_of_array(array, 10);
   clock_t n_end = clock();
 
   clock_t f_start = clock();
-  fast_sum_of_array(array, 10);
+  for(int i = ; i < 100000; i++)
+    fast_sum_of_array(array, 10);
   clock_t f_end = clock();
 
   //printf("normal time%lu\n", (n_end - n_start));
   //printf("fast time%lu\n", (f_end - f_start));
 
-  EXPECT_TRUE(((n_end - n_start) - (f_end - f_start)) > 0);
+  EXPECT_TRUE(((n_end - n_start) - (f_end - f_start)) > 0.0);
 }
 
 GTEST_API_ int main(int argc, char **argv){
