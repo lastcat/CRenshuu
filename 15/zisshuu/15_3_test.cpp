@@ -18,12 +18,12 @@ TEST(fast_sum_of_array_test, case1){
 TEST(speed_test, case1){
   int array[] = {1,2,3,4,5,6,7,8,9,10};
   clock_t n_start = clock();
-  for(int i = ; i < 100000; i++)
+  for(int i = 0; i < 100000; i++)
     sum_of_array(array, 10);
   clock_t n_end = clock();
 
   clock_t f_start = clock();
-  for(int i = ; i < 100000; i++)
+  for(int i = 0; i < 100000; i++)
     fast_sum_of_array(array, 10);
   clock_t f_end = clock();
 
