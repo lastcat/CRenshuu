@@ -13,3 +13,5 @@
 雑なカバレッジ。気分だけでも。
 
 [![Coverage Status](https://coveralls.io/repos/lastcat/CRenshuu/badge.svg?branch=master)](https://coveralls.io/r/lastcat/CRenshuu?branch=master)
+
+test
